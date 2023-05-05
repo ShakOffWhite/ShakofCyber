@@ -1,0 +1,37 @@
+js
+const audio = document.getElementById("myAudio");
+const audioBtn = document.getElementById("audioBtn");
+
+function toggleAudio() {
+  if (audio.paused) {
+    audio.play();
+    audioBtn.innerHTML = '<i class="fas fa-volume-up"></i> Turn sound off';
+    audioBtn.classList.add("active");
+  } else {
+    audio.pause();
+    audioBtn.innerHTML = '<i class="fas fa-volume-mute"></i> Turn sound on';
+    audioBtn.classList.remove("active");
+  }
+}
+
+ксс
+#audioBtn {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#audioBtn.active {
+  background-color: red;
+}
+
+#audioBtn .fa {
+  font-size: 20px;
+  margin-right: 5px;
+}
+хтмил
+<audio id="myAudio" src="never.mp3"></audio>
+<button id="audioBtn" onclick="toggleAudio()">Turn sound on</button>
